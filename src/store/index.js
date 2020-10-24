@@ -10,11 +10,11 @@ export default new Vuex.Store({
         ram: 0,
         totalRam: 0,
         rps: 0,
-        rpk: 0,
+        rpk: 1,
         player: {
             name: "",
             level: 0,
-            ramUntilLevelUp: 100,
+            nextLevel: 100,
             increase: 3
         },
         power_ups: [],
@@ -54,11 +54,19 @@ export default new Vuex.Store({
     ]
     },
     mutations: {
+        incrementRam: (state, increment) => {
+            state.ram += increment;
+            state.totalRam += increment;
+        },
+        levelUp: state => {
+            state.player.level++;
+            state.player.nextLevel *= state.player.increase;
+        }
 
     },
     getters: {
         ramUntilLevelUp: state => {
-            return Math.round(state.player.ramUntilLevelUp - state.totalRam);
+            return Math.round(state.player.nextLevel - state.totalRam);
         }
 
     }

@@ -2,11 +2,9 @@
     <div class="overview">
         <h3>Current Ram</h3>
         <div class="ram">{{ ram }}</div>
-        <div class="jumbotron">
         <div class="rps"> Ram Per Second: {{ rps }}</div>
         <div class="level">Current Level: {{ level }}</div>
         <div class="next-level">Ram Until Next Level: {{ ramUntilLevelUp }}</div>
-        </div>
     </div>
 </template>
 
@@ -62,4 +60,23 @@ export default {
         margin-bottom: 30px;
     }
 
+    .rps,
+    .level,
+    .next-level {
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-style: italic;
+        text-align: center;
+        
+
+    }
+
 </style>
+
+
+
+
+
+
+
+
