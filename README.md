@@ -1,4 +1,4 @@
-# test
+# Overflow: A simple Clicker style game in vue.js
 
 ## Project setup
 ```
